@@ -1,0 +1,7 @@
+export AddNewOrder from './AddNewOrder/AddNewOrder'
+export App from './App/App'
+export Header from './Header/Header'
+export HomePage from './HomePage/HomePage'
+export NotFoundPage from './NotFoundPage/NotFoundPage'
+export ProductTable from './ProductTable/ProductTable.jsx'
+export OrderList from './OrderList/OrderList'
