@@ -1,5 +1,6 @@
 npm i
-nps start
+
+npm start
 
 Based on webpack, react, redux starter kit
 Also added MongoDb
