@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-let validators = require('mongoose-validators');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+let validators = require('mongoose-validators')
 
 const orderSchema = new Schema({
   orderN: {type: String, validate: validators.isLength(1, 60)},
@@ -10,6 +10,6 @@ const orderSchema = new Schema({
   provider: {type: String, validate: validators.isLength(1, 60)},
   dueDate: {type: String, validate: validators.isLength(1, 60)},
   createdMonth: {type: String}
-});
+})
 
-module.exports = orderSchema;
+module.exports = orderSchema

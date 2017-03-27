@@ -1,28 +1,28 @@
 import React from 'react'
 import { Table, Button, Icon } from 'semantic-ui-react'
-import moment from 'moment';
+import moment from 'moment'
 
 class OrderList extends React.Component {
 
-    componentWillMount() {
-        this.props.loadOrders();
+  componentWillMount() {
+    this.props.loadOrders()
+  }
+
+  drawTable(data) {
+
+    function handleDisalbed(dueDate) {
+      let darr = dueDate.split('-')
+      let dobj = new Date(parseInt(darr[2]),parseInt(darr[1])-1,parseInt(darr[0]))
+      let daysTillDL = moment().diff(dobj, 'days')
+      return daysTillDL > -3 ? true : false
     }
 
-    drawTable(data) {
-
-        function handleDisalbed(dueDate) {
-            let darr = dueDate.split("-");
-            let dobj = new Date(parseInt(darr[2]),parseInt(darr[1])-1,parseInt(darr[0]));
-            let daysTillDL = moment().diff(dobj, 'days');
-            return daysTillDL > -3 ? true : false;
-        }
-
-    let row;
-    if(!data) return <Table.Cell>No data in DB</Table.Cell>;
+    let row
+    if(!data) return <Table.Cell>No data in DB</Table.Cell>
 
     row = data.map(row => {
 
-        return (
+      return (
             <Table.Row>
                 <Table.Cell>{row.orderN}</Table.Cell>
                 <Table.Cell>{row.managerName}</Table.Cell>
@@ -42,16 +42,16 @@ class OrderList extends React.Component {
                     </Button.Group>
                 </Table.Cell>
             </Table.Row>
-        );
-    });
+      )
+    })
 
-    return row;
-}
+    return row
+  }
 
-    render() {
-        let orders = this.props.orders.orders;
+  render() {
+    let orders = this.props.orders.orders
 
-        return(
+    return(
             <div>
                 <Table celled selectable>
                     <Table.Header>
@@ -70,8 +70,8 @@ class OrderList extends React.Component {
                     </Table.Body>
                 </Table>
             </div>
-        )
-    }
+    )
+  }
 }
 
 export default OrderList

@@ -4,15 +4,15 @@ import { HeaderContainer } from '../../containers'
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentWillMount() {
-    this.props.loadOrders();
+    this.props.loadOrders()
   }
 
   render() {
-    let orders = this.props.orders.orders;
+    let orders = this.props.orders.orders
 
 
     return(
@@ -26,6 +26,6 @@ class App extends React.Component {
 
 App.propTypes = {
   children: React.PropTypes.element.isRequired
-};
+}
 
 export default App

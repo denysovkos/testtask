@@ -4,11 +4,11 @@ import { loadProducts } from '../../actions'
 import { HomePage } from '../../components'
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({loadProducts}, dispatch);
+  return bindActionCreators({loadProducts}, dispatch)
 }
 
 function mapStateToProps(state, props) {
-  return state;
+  return state
 }
 
 const HomePageContainer = connect(mapStateToProps, mapDispatchToProps)(HomePage)

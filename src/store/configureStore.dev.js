@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import rootReducer from '../reducers'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 export default function configureStore(preloadedState) {
 
@@ -10,7 +10,7 @@ export default function configureStore(preloadedState) {
     rootReducer,
     preloadedState,
     composeWithDevTools(applyMiddleware(thunk, createLogger()))
-  );
+  )
 
   // ======================================================
   // HRM setup
@@ -18,7 +18,7 @@ export default function configureStore(preloadedState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers').default;
+      const nextRootReducer = require('../reducers').default
       store.replaceReducer(nextRootReducer)
     })
   }
